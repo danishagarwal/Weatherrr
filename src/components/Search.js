@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Display from "./Display";
 
 const Search = () => {
   const [text, setText] = useState(""); //Storing the searched value
@@ -37,6 +38,7 @@ const Search = () => {
         <div className="weather">
           <h1>{weather.name}</h1>
           <h2>{weather.message}</h2> {/* if there is a wrong input  */}
+          <Display weather={weather} />
         </div>
       </div>
     </>
