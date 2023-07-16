@@ -14,15 +14,10 @@ const Search = () => {
       `${api.base}weather?q=${text}&appid=${api.key}&units=metric`
     );
     const json = await data.json();
-    if (!json) {
-      return;
-    } else {
-      (setWeather) => setWeather(json);
-      console.log(weather);
-      setText("");
-    }
+    setWeather(json);
+    setText("");
+    console.log(json);
   }
-  console.log(text);
 
   return (
     <>
@@ -36,7 +31,7 @@ const Search = () => {
             value={text}
             type="text"
           ></input>
-          <button onClick={handleClick}>Search</button>
+          <button onClick={() => handleClick()}>Search</button>
         </div>
 
         <div className="weather">
