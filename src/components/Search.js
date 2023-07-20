@@ -20,25 +20,42 @@ const Search = () => {
     console.log(json);
   }
 
+  const searchElement = (
+    <div className="search-container">
+      <input
+        className="search-input"
+        onChange={(e) => setText(e.target.value)}
+        value={text}
+        type="text"
+      ></input>
+      <button className="search-button" onClick={() => handleClick()}>
+        Search
+      </button>
+    </div>
+  );
+
   return (
     <>
-      <div>
+      <div className="container">
         <h2> React Weather Application </h2>
-        <div className="search">
-          <h3> Search City</h3>
-
-          <input
-            onChange={(e) => setText(e.target.value)}
-            value={text}
-            type="text"
-          ></input>
-          <button onClick={() => handleClick()}>Search</button>
-        </div>
-
+        <h3> Search City</h3>
         <div className="weather">
-          <h1>{weather.name}</h1>
-          <h2>{weather.message}</h2> {/* if there is a wrong input  */}
-          <Display weather={weather} />
+          {weather.cod === "404" ? (
+            <>
+              {searchElement}
+              <div className="weather-message">
+                <p>{weather.message}</p>
+              </div>
+            </>
+          ) : (
+            <>
+              {searchElement}
+              <h1>
+                {weather?.name} {weather?.sys?.country}
+              </h1>
+              <Display weather={weather} />
+            </>
+          )}
         </div>
       </div>
     </>
