@@ -42,3 +42,10 @@
   margin: auto;
   margin-top: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .display-container {
+    max-width: 90%; 
+    height: auto; 
+  }
+}

@@ -51,7 +51,7 @@ const Search = () => {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     minHeight: "100vh", // Set the minimum height to cover the entire viewport
-    minWidth: "100vh",
+    minWidth: "100vw",
   };
 
   return (
