@@ -6,9 +6,12 @@ const Display = ({ weather }) => {
       {weather && (
         <div className="display-container">
           {/* Display the relevant weather information here */}
+          <h1>
+            {weather?.name} {weather?.sys?.country}
+          </h1>
           <p>Temperature: {weather.main.temp} °C</p>
           <p>Description: {weather.weather[0].main}</p>
-          <p>Feels like: {weather.main.feels_like}</p>
+          <p>Feels like: {weather.main.feels_like} °C</p>
           <p>Humidity: {weather.main.humidity}</p>
 
           {/* Add more weather details as needed */}
