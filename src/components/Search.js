@@ -35,10 +35,11 @@ const Search = () => {
   );
 
   const getBackgroundImage = () => {
-    if (weather && weather?.main?.temp <= 25) {
-      return "url('https://media.istockphoto.com/id/612023744/photo/blue-and-orange-sunset-sky.jpg?s=612x612&w=0&k=20&c=bqPHaI4d3ghIbLIwtbTDPxV8QQ2pIN2mbCfzLb7gucQ=')"; // Replace with the URL of the hot background image
-    } else if (weather && weather?.main?.temp >= 25) {
-      return "url('https://media.istockphoto.com/id/1049365996/photo/rain-fall-on-the-ground.jpg?s=612x612&w=0&k=20&c=lH73ofHt2WKtJhatw8H53DN4EfgV4ZKDEGPqO4xOPho=')"; // Replace with the URL of the cold background image
+    if (weather && weather?.main?.temp <= 20) {
+      return "url('https://media.istockphoto.com/id/1049365996/photo/rain-fall-on-the-ground.jpg?s=612x612&w=0&k=20&c=lH73ofHt2WKtJhatw8H53DN4EfgV4ZKDEGPqO4xOPho=')"; // Replace with the URL of the hot background image
+    } else if (weather && weather?.main?.temp >= 20) {
+      return "url('https://media.istockphoto.com/id/612023744/photo/blue-and-orange-sunset-sky.jpg?s=612x612&w=0&k=20&c=bqPHaI4d3ghIbLIwtbTDPxV8QQ2pIN2mbCfzLb7gucQ=')";
+      // Replace with the URL of the cold background image
     } else {
       return "url('https://images.pexels.com/photos/531767/pexels-photo-531767.jpeg?cs=srgb&dl=pexels-pixabay-531767.jpg&fm=jpg')"; // Replace with the URL of the default background image
     }
